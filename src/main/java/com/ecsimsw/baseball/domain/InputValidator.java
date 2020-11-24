@@ -8,7 +8,10 @@ public class InputValidator {
     private static final int INPUT_MIN = 1;
     private static final int INPUT_MAX = 9;
 
-    public static boolean isValid(String userInput){
+    private static final String PLAY_AGAIN = "1";
+    private static final String QUIT = "2";
+
+    public static boolean isValidGuess(String userInput){
         if(!isValidLength(userInput)){
             return false;
         }
@@ -60,5 +63,12 @@ public class InputValidator {
             return false;
         }
         return true;
+    }
+
+    public static boolean isValidAgainAnswer(String userInput){
+       if(userInput.equals(PLAY_AGAIN) || userInput.equals(QUIT)){
+           return true;
+       }
+       return false;
     }
 }
